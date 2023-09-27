@@ -1,4 +1,4 @@
-[![Open in Visual Studio Code](https://classroom.github.com/assets/open-in-vscode-718a45dd9cf7e7f842a935f5ebbe5719a5e09af4491e668f4dbf3b35d5cca122.svg)](https://classroom.github.com/online_ide?assignment_repo_id=12086867&assignment_repo_type=AssignmentRepo)
+
 # Soluções em Grafos
 Este projeto visa abordar desafios do setor de transporte de passageiros, onde a principal preocupação é garantir a conectividade terrestre entre cidades. O objetivo é criar uma solução em Java que permita aos usuários obter informações importantes sobre estradas entre cidades, como a existência de estradas entre qualquer par de cidades, identificar cidades inacessíveis por transporte terrestre, receber recomendações de visitação em todas as cidades e estradas e, por fim, encontrar a rota mais curta para um passageiro que deseja partir da rodoviária, visitar todas as cidades conectadas e retornar à rodoviária.
 
