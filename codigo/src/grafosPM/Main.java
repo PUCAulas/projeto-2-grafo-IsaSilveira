@@ -1,9 +1,11 @@
 package grafosPM;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 public class Main {
-	public static void main(String[] args) {
+    public static void main(String[] args) {
         Grafo grafo = new Grafo();
 
         // Adicionando as cidades ao grafo
@@ -19,7 +21,7 @@ public class Main {
         grafo.adicionarCidade("Mumbai");
         grafo.adicionarCidade("Bangcoc");
 
-        // Adicionando as arestas ao grafo 
+        // Adicionando as arestas ao grafo
         grafo.adicionarAresta("Cidade do Cabo", "Joanesburgo", 1270);
         grafo.adicionarAresta("Cidade do Cabo", "Nairobi", 3900);
         grafo.adicionarAresta("Cidade do Cabo", "Paris", 8900);
@@ -39,17 +41,47 @@ public class Main {
         grafo.adicionarAresta("Pequim", "Bangcoc", 2700);
         grafo.adicionarAresta("Mumbai", "Nairobi", 4300);
         grafo.adicionarAresta("Bangcoc", "Joanesburgo", 8800);
+        
+        Scanner entrada = new Scanner(System.in);
+        System.out.println("Bem vindo à Soluções em Grafos. Digite um numero para selecionar a ação desejada:");
+        System.out.println("1 - Verificar se existe uma estrada de qualquer cidade para qualquer cidade ");
+        System.out.println("2 - Identificar cidades inacessíveis");
+        System.out.println("3 - Recomendação de visitação");
+        System.out.println("4 - Recomendação de rota para passageiro");
+        
+        int numero = entrada.nextInt();
+         switch (numero) {
+           case 1:
+               // (a) Verificar se existe uma estrada de qualquer cidade para qualquer cidade
+               boolean existeEstradaDeQualquerParaQualquer = grafo.existeEstradaDeQualquerParaQualquer();
+               System.out.println("Existe estrada de qualquer cidade para qualquer cidade: " + existeEstradaDeQualquerParaQualquer);
+             break;
+           case 2:
+        	// (b) Identificar cidades inacessíveis
+               List<String> cidadesInacessiveis = grafo.identificarCidadesInacessiveis();
+               System.out.println("Cidades inacessíveis: " + cidadesInacessiveis);
+             break;
+           case 3:
+        	// (c) Recomendação de visitação
+               List<String> recomendacaoVisita = grafo.recomendarVisitaEmTodasCidades();
+               System.out.println("Recomendação de visitação em todas as cidades: " + recomendacaoVisita);
+             break;
+           case 4:
+        	// (d) Recomendação de rota para passageiro
+               
+        	   List<String> rotaAproximada = grafo.encontrarRotaAproximada();
+        	   System.out.println("Rota Aproximada: " + rotaAproximada);
+             break;
+           default:
+             System.out.println("O número escolhido é inválido! Digite um número entre 1 a 4.");
+         }
+        
+        
 
-        // Exemplo de como obter a distância entre duas cidades
-        int distanciaParisLondres = grafo.obterDistancia("Paris", "Londres");
-        if (distanciaParisLondres != -1) {
-            System.out.println("A distância entre Paris e Londres é: " + distanciaParisLondres + " km");
-        } else {
-            System.out.println("Não há uma conexão direta entre Paris e Londres.");
-        }
+        
 
-        // Exemplo de como obter a lista de cidades no grafo
-        List<String> cidades = grafo.obterVertices();
-        System.out.println("Cidades no grafo: " + cidades);
+        
+
+        
     }
 }
